@@ -66,13 +66,20 @@ body{
     bottom: 10px;
     left: 10px;
     color: #FFF;
-    font-size: 25px;
+    font-size: 10px;
     font-family: 'Titillium Web', sans-serif;
 }
 
 
 /*  List  */
 
+.list2{
+    background-color: #ccc;
+}
+
+.list3{
+    background-color: #7aa13b;
+}
 
 
 
@@ -176,7 +183,7 @@ body{
     position: relative;
     left: 50px;
     height: 35px;
-    width: 310px;
+    width: 270px;
     background-color: transparent;
     border: none;
     font-size: 20px;

@@ -73,11 +73,13 @@ function addToDo(toDo, id, done, trash){
     const LINE = done ? LINE_THROUGH : "";
 
     const item = `
+            <div>
             <li class="item">
                 <i class="fa ${DONE} co" job="complete" id="${id}" ></i>
                 <p class="text ${LINE}">${toDo}</p>
                 <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
             </li>
+            </div>
     
     `;
     const position = "beforeend";
