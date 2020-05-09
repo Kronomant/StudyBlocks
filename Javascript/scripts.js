@@ -93,8 +93,6 @@ function addToDo(toDo, id, done, trash){
     list.insertAdjacentHTML(position, item);
 
 
-
-
 }
 
 //addToDo('fazer site');
@@ -154,7 +152,7 @@ function removeToDo(element){
 // rastrear os itens criados
 
 list.addEventListener("click", function(event){
-    const element = event.target; 
+    const element = event.target
     const elementJob = element.attributes.job.value;
 
     if(elementJob == "complete"){
@@ -164,9 +162,41 @@ list.addEventListener("click", function(event){
     }
 
     // adicionar item do localstorage
-localStorage.setItem("TODO", JSON.stringify(LIST));
+    localStorage.setItem("TODO", JSON.stringify(LIST));
 
 });
+
+list2.addEventListener("click", function(event){
+    const element = event.target
+    const elementJob = element.attributes.job.value;
+
+    if(elementJob == "complete"){
+        completeToDo(element);
+    } else if (elementJob == "delete"){
+        removeToDo(element);
+    }
+
+    // adicionar item do localstorage
+    localStorage.setItem("TODO", JSON.stringify(LIST));
+        
+});
+
+list3.addEventListener("click", function(event){
+    const element = event.target
+    const elementJob = element.attributes.job.value;
+
+    if(elementJob == "complete"){
+        completeToDo(element);
+    } else if (elementJob == "delete"){
+        removeToDo(element);
+    }
+
+    // adicionar item do localstorage
+    localStorage.setItem("TODO", JSON.stringify(LIST));
+
+});
+
+
 
 // Drag and drop
 
@@ -210,7 +240,7 @@ function dropAction(event){
             const position = "beforeend";
     
     
-            list2.insertAdjacentHTML(position,item);    
+           list2.insertAdjacentHTML(position,item);    
         }
 
         
