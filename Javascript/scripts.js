@@ -9,6 +9,10 @@ const dateElement = document.getElementById("date");
 
 const list = document.getElementById("list");
 
+const list2 = document.getElementById("list2");
+
+const list3 = document.getElementById("list3");
+
 const input= document.getElementById("input");
 
 // Nome da classes
@@ -20,7 +24,7 @@ const LINE_THROUGH = "lineThrough";
 
 // Variaveis
 
-let LIST = [], id = 0;
+let LIST = [], id = 1, cont = 0;
 
 // pegar item do localstorage
 
@@ -34,7 +38,8 @@ if(data){
 }else{
 
     LIST = [];
-    id = 0;
+    id = 1;
+    cont = 0;
 }
 
 // carregar os itens para a inteface do usuario
@@ -73,18 +78,21 @@ function addToDo(toDo, id, done, trash){
     const LINE = done ? LINE_THROUGH : "";
 
     const item = `
-            <div>
-            <li class="item">
+            <div id="${id}"class="item"draggable="true" ondragstart="dragStart(event)">
                 <i class="fa ${DONE} co" job="complete" id="${id}" ></i>
                 <p class="text ${LINE}">${toDo}</p>
                 <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
-            </li>
             </div>
     
     `;
+
+
     const position = "beforeend";
+        
 
     list.insertAdjacentHTML(position, item);
+
+
 
 
 }
@@ -113,9 +121,10 @@ document.addEventListener("keyup", function(even){
 
 
 
-
             id++;
-        }
+
+
+                    }
         input.value = "";
         }
 
@@ -158,3 +167,62 @@ list.addEventListener("click", function(event){
 localStorage.setItem("TODO", JSON.stringify(LIST));
 
 });
+
+// Drag and drop
+
+function dragStart(event)
+{
+ event.dataTransfer.setData("text/plain", event.target.id);   
+ console.log("event.target.id", event.target.id)
+}
+
+
+function overAction(event){
+
+    event.preventDefault();
+
+}
+
+function dropAction(event){
+
+    event.preventDefault();
+
+    const dados = event.dataTransfer.getData("text/plain");
+
+    console.log("Dados => ", event.target);
+    const elemento = document.getElementById(dados);
+
+    try{
+
+        event.target.appendChild(elemento);
+        if(cont<id) // Limitador se isso não existir varias "dropzones" vão ser criadas infinitamente.
+        {
+            cont++;
+
+            const item = `
+                
+            <div class="dropper" ondragover="overAction(event)" ondrop="dropAction(event)" >
+    
+            </div>
+                        
+            `;
+    
+            const position = "beforeend";
+    
+    
+            list2.insertAdjacentHTML(position,item);    
+        }
+
+        
+
+
+
+
+    }   catch(error){
+        console.error("Não foi possivel fazer o drop");
+    }
+    event.stopPropagation();
+
+
+
+} 

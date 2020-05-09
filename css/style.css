@@ -18,14 +18,6 @@
 }
 
 
-
-
-
-
-
-
-
-
 body{
     padding: 0;
     margin: 0;
@@ -33,7 +25,25 @@ body{
     font-family: 'Titillium Web', sans-serif;
 }
 
-/* ------------ container ------------ */
+/* ------------ container ------------*/ 
+
+
+
+
+.dropper{
+
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: 45px;
+    height: 40px;
+    width:100%;
+    border-radius: 10px;
+    background-color: rgb(238, 236, 236);
+}
+
+
+
 
 /* ------------ header ------------ */
 .head{
@@ -73,14 +83,30 @@ body{
 
 /*  List  */
 
-.list2{
-    background-color: #ccc;
+.progresso{
+    text-align: center;
+    background-color: rgb(0, 162, 255);
+    border-radius: 10px;
+    margin:10px;
+    padding: 1px;
 }
 
-.list3{
-    background-color: #7aa13b;
+.A_fazer{
+    text-align: center;
+    background-color: rgb(240, 108, 0);
+    border-radius: 10px;
+    margin:10px;
+    padding: 1px;
 }
 
+.Completo{
+    text-align: center;
+    background-color: #6eb200;
+    border-radius: 10px;
+    margin:10px;
+    padding: 1px;
+    font-weight: bold;
+}
 
 
 
@@ -92,9 +118,9 @@ body{
     max-height:350px;
     background-color: #FFF;
     overflow: auto;
-    margin: 0 auto;
     margin-top: 10px;
     border-radius: 10px;
+    margin:10px 40px;
 }
 .content::-webkit-scrollbar { 
     width: 8px;
@@ -116,15 +142,29 @@ body{
     padding:0;
     margin:0;
 }
+
+.content2{
+    background-color: #FFF;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    overflow: auto;
+    max-height:350px;
+}
+
+
+
+
 .item{
     width:100%;
     height: 100%;
     min-height: 45px;
     position: relative;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background-color: rgb(238, 236, 236);
+    border-radius: 10px;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin-bottom: 10px;
 }
 .item i.co{
     position: absolute;
@@ -146,7 +186,7 @@ body{
     font-size: 20px;
     left:50px;
     top:5px;
-    background-color: #FFF;
+    background-color: rgb(238, 236, 236);
     max-width:285px;
 }
 .lineThrough{
@@ -165,25 +205,25 @@ body{
 }
 /* ------------ add item ------------ */
 .add-to-do{
-    margin-top: 130px;
+    margin-top: 30px;
     position: relative;
-    width: 360px;
-    height:40px;
-    background-color: #FFF;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
     padding: 10px;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
 .add-to-do i{
     position: absolute;
     font-size: 40px;
-    color: #4162f6;
+    color: #6eb200;
 }
 
 .add-to-do input{
     position: relative;
     left: 50px;
     height: 35px;
-    width: 270px;
+    width: 200px;
     background-color: transparent;
     border: none;
     font-size: 20px;
