@@ -30,6 +30,7 @@ let LIST = [], id = 1, cont = 0;
 
 let data = localStorage.getItem("TODO");
 
+
 // checar se a data não esta vazia
 if(data){
     LIST = JSON.parse(data);
@@ -78,7 +79,7 @@ function addToDo(toDo, id, done, trash){
     const LINE = done ? LINE_THROUGH : "";
 
     const item = `
-            <div id="${id}"class="item"draggable="true" ondragstart="dragStart(event)">
+            <div id="${id} item"class="item"draggable="true" ondragstart="dragStart(event)">
                 <i class="fa ${DONE} co" job="complete" id="${id}" ></i>
                 <p class="text ${LINE}">${toDo}</p>
                 <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
@@ -178,7 +179,7 @@ list2.addEventListener("click", function(event){
 
     // adicionar item do localstorage
     localStorage.setItem("TODO", JSON.stringify(LIST));
-        
+
 });
 
 list3.addEventListener("click", function(event){
@@ -225,7 +226,8 @@ function dropAction(event){
     try{
 
         event.target.appendChild(elemento);
-        if(cont<id) // Limitador se isso não existir varias "dropzones" vão ser criadas infinitamente.
+        
+        if(cont<(id-1)) // Limitador se isso não existir varias "dropzones" vão ser criadas infinitamente.
         {
             cont++;
 
@@ -239,13 +241,10 @@ function dropAction(event){
     
             const position = "beforeend";
     
-    
-           list2.insertAdjacentHTML(position,item);    
+          list.insertAdjacentHTML(position,item);
+           list2.insertAdjacentHTML(position,item);
+           list3.insertAdjacentHTML(position,item);    
         }
-
-        
-
-
 
 
     }   catch(error){
@@ -256,3 +255,7 @@ function dropAction(event){
 
 
 } 
+
+
+
+
