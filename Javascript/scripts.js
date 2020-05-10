@@ -24,7 +24,7 @@ const LINE_THROUGH = "lineThrough";
 
 // Variaveis
 
-let LIST = [], id = 1, cont = 0;
+let LIST = [], id = 0, cont = 0, quant = 0;
 
 // pegar item do localstorage
 
@@ -34,12 +34,14 @@ let data = localStorage.getItem("TODO");
 // checar se a data não esta vazia
 if(data){
     LIST = JSON.parse(data);
-    id = LIST.length
+    id = LIST.length;
+    quant = LIST.length;
+    cont = LIST.length;
     loadList(LIST);
 }else{
-
+    quant = 0;
     LIST = [];
-    id = 1;
+    id = 0;
     cont = 0;
 }
 
@@ -117,9 +119,7 @@ document.addEventListener("keyup", function(even){
 
             // adicionar item do localstorage
             localStorage.setItem("TODO", JSON.stringify(LIST));
-
-
-
+            quant++
             id++;
 
 
@@ -147,6 +147,12 @@ function removeToDo(element){
     element.parentNode.parentNode.removeChild(element.parentNode);
 
     LIST[element.id].trash = true;
+    if(quant>1)
+    {
+        document.getElementsByClassName("dropper")[0].remove();
+        location.reload();
+    }
+    quant--;    
 
 }
 
@@ -227,7 +233,7 @@ function dropAction(event){
 
         event.target.appendChild(elemento);
         
-        if(cont<(id-1)) // Limitador se isso não existir varias "dropzones" vão ser criadas infinitamente.
+        if(cont<quant) // Limitador se isso não existir varias "dropzones" vão ser criadas infinitamente.
         {
             cont++;
 
@@ -241,7 +247,7 @@ function dropAction(event){
     
             const position = "beforeend";
     
-          list.insertAdjacentHTML(position,item);
+           list.insertAdjacentHTML(position,item);
            list2.insertAdjacentHTML(position,item);
            list3.insertAdjacentHTML(position,item);    
         }
@@ -254,7 +260,42 @@ function dropAction(event){
 
 
 
-} 
+}
+
+
+/*ANIMAÇÃO do hover */
+const ANIMATEDCLASSNAME = "animated";
+const ELEMENTS = document.querySelectorAll(".HOVER");
+const ELEMENTS_SPAN = [];
+
+ELEMENTS.forEach((element, index) => {
+	let addAnimation = false;
+	// Elements that contain the "FLASH" class, add a listener to remove
+	// animation-class when the animation ends
+	if (element.classList[1] == "FLASH") {
+		element.addEventListener("animationend", e => {
+			element.classList.remove(ANIMATEDCLASSNAME);
+		});
+		addAnimation = true;
+	}
+
+	// If The span element for this element does not exist in the array, add it.
+	if (!ELEMENTS_SPAN[index])
+		ELEMENTS_SPAN[index] = element.querySelector("span");
+
+	element.addEventListener("mouseover", e => {
+		ELEMENTS_SPAN[index].style.left = e.pageX - element.offsetLeft + "px";
+		ELEMENTS_SPAN[index].style.top = e.pageY - element.offsetTop + "px";
+
+		// Add an animation-class to animate via CSS.
+		if (addAnimation) element.classList.add(ANIMATEDCLASSNAME);
+	});
+
+	element.addEventListener("mouseout", e => {
+		ELEMENTS_SPAN[index].style.left = e.pageX - element.offsetLeft + "px";
+		ELEMENTS_SPAN[index].style.top = e.pageY - element.offsetTop + "px";
+	});
+});
 
 
 
