@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -198,43 +197,3 @@ h1 {
   
  
 
-=======
-.header{
-    margin: 0px;
-    padding: 0px;
-    font-size: 1.2rem;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.header a{
-    text-decoration: none;
-    color: black;
-    background: chartreuse;
-}
-
-.header{
-    background: #c4c4c4;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-
-
-
-}
-
-.logo{
-    width: 80px;
-
-}
-
-.menu{
-    display: flex;
-}
-.menu li{
-    list-style: none;
-    margin-left: 10px;
-    margin-right: 50px;
-}
->>>>>>> 683bb2d5ac9b1a219c919c23640a5eb68d9bfe17
