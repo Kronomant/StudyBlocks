@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StudyBlocks</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/animate.css">    
+    
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/cronograma.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="site-wrap">
+
+    
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+    
+    <!--NAV BAR SITE --- I N I C I O-->
+    
+    <div class="site-navbar-wrap js-site-navbar bg-white">
+      
+      <div class="container">
+        <div class="site-navbar bg-light">
+          <div class="row align-items-center">
+            <div class="col-2">
+              <h2 class="mb-0 site-logo"><a href="index.html" class="font-weight-bold text-uppercase">StudyBlocks</a></h2>
+            </div>
+            <div class="col-10">
+              <nav class="site-navigation text-right" role="navigation">
+                <div class="container">
+                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+                  <ul class="site-menu js-clone-nav d-none d-lg-block">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Sobre nós</a></li>
+                    <li class="active"><a href="Cronograma.html">Cronograma</a></li>
+                    <li><a href="tarefas.html">Tarefas</a></li>
+                    <li><a href="contact.html">Resumos</a></li>
+                    <li><a href="contact.html"><span class="d-inline-block bg-primary text-white btn btn-primary">Comece já</span></a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--NAV BAR SITE --- F I M -->
+  
+    <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/eric-rothermel-FoKO4DpXamQ-unsplash.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-5 text-center" data-aos="fade">
+          <h1 class="text-uppercase">Calendario</h1>
+          <span class="caption d-block text-white">Datas Importantes<!--<a href="#">Colorlib</a>--></span>
+        </div>
+      </div>
+    </div>  
+
+    <div class="slant-1"></div>
+
+    
+    
+    <div class="site-section first-section">
+      <div class="container">
+        <div class="calendar disable-selection" id="calendar">
+          <div class="left-side">
+              <div class="current-day text-center">
+                  <h1 class="calendar-left-side-day"></h1>
+                  <div class="calendar-left-side-day-of-week"></div>
+              </div>
+              <div class="current-day-events">
+                  <div>Eventos de hoje:</div>
+                  <ul class="current-day-events-list">
+                      <li>Some Event</li>
+                  </ul>
+              </div>
+              <div class="add-event-day">
+                  <input type="text" class="add-event-day-field" placeholder="Adicionar um evento">
+                  <span class="fa fa-plus-circle cursor-pointer add-event-day-field-btn"></span>
+              </div>
+          </div>
+          <div class="right-side">
+              <div class="text-right calendar-change-year">
+                  <div class="calendar-change-year-slider">
+                      <span class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"></span>
+                      <span class="calendar-current-year">2020</span>
+                      <span class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"></span>
+                  </div>
+              </div>
+              <div class="calendar-month-list">
+                  <ul class="calendar-month">
+                      <li>jan</li>
+                  </ul>
+              </div>
+              <div class="calendar-week-list">
+                  <ul class="calendar-week">
+                      <li>Sun</li>
+                  </ul>
+              </div>
+              <div class="calendar-day-list">
+                  <ul class="calendar-days">
+                      <li data-day="01"></li>
+                      <li data-day="02"></li>
+                      <li data-day="03"></li>
+                      <li data-day="04"></li>
+                      <li data-day="05"></li>
+                      <li data-day="06"></li>
+                      <li data-day="07"></li>
+                      <li data-day="08"></li>
+                      <li data-day="09"></li>
+                      <li data-day="10"></li>
+                      <li data-day="11"></li>
+                      <li data-day="12"></li>
+                      <li data-day="13"></li>
+                      <li data-day="14"></li>
+                      <li data-day="15"></li>
+                      <li data-day="16"></li>
+                      <li data-day="17"></li>
+                      <li data-day="18"></li>
+                      <li data-day="19"></li>
+                      <li data-day="20"></li>
+                      <li data-day="21"></li>
+                      <li data-day="22"></li>
+                      <li data-day="23"></li>
+                      <li data-day="24"></li>
+                      <li data-day="25"></li>
+                      <li data-day="26"></li>
+                      <li data-day="27"></li>
+                      <li data-day="28"></li>
+                      <li data-day="29"></li>
+                      <li data-day="30"></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+
+      </div>
+    </div>
+
+   
+
+    <footer class="site-footer bg-dark">
+      <div class="container">
+        
+
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h3 class="footer-heading mb-4 text-white">Sobre nós</h3>
+            <p>StudyBlocks é um projeto de universitarios da PucMinas.</p>
+            <p><a href="#" class="btn btn-primary text-white px-4">Ler mais</a></p>
+          </div>
+          <div class="col-md-5 mb-4 mb-md-0 ml-auto">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <h3 class="footer-heading mb-4 text-white">Menu Rápido</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="Cronograma.html">Cronograma</a></li>
+                    <li><a href="tarefas.html">Tarefas</a></li>
+                  </ul>
+              </div>
+             
+            </div>
+
+            <div class="row mb-6">
+              <div class="col-md-12">
+              <h3 class="footer-heading mb-4 text-white">Seja sempre atualizado</h3>
+              <form action="#" class="d-flex footer-subscribe">
+                <input type="text" class="form-control rounded-0" placeholder="Insira seu email">
+                <input type="submit" class="btn btn-primary rounded-0" value="Inscreva-se">
+              </form>
+            </div>
+            </div>
+          </div>
+
+          
+          <div class="col-md-2">
+            
+            <div class="row">
+            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
+              <div class="col-md-12">
+                <p>
+                  <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
+                  <a href="#" class="p-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="p-2"><span class="icon-instagram"></span></a>
+                  <a href="#" class="p-2"><span class="icon-vimeo"></span></a>
+
+                </p>
+              </div>
+          </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+
+            
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+
+  <script src="js/jquery.fancybox.min.js"></script>
+
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+  <script type="text/javascript" src="js/cronograma.js"></script>
+
+  
+  </body>
+</html>
