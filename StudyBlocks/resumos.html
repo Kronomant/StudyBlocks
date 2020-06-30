@@ -28,10 +28,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <link rel="stylesheet" href="css/cronograma.css">
+
+    <link rel="stylesheet" href="css/resumos.css">
     
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body onload="init()">
   
   <div id="overlayer"></div>
   <div class="loader">
@@ -72,9 +74,9 @@
                   <ul class="site-menu js-clone-nav d-none d-lg-block">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">Sobre nós</a></li>
-                    <li class="active"><a href="Cronograma.html">Cronograma</a></li>
+                    <li><a href="Cronograma.html">Cronograma</a></li>
                     <li><a href="tarefas.html">Tarefas</a></li>
-                    <li><a href="resumos.html">Resumos</a></li>
+                    <li class="active"><a href="resumos.html">Resumos</a></li>
                     <li><a href="#"><span class="d-inline-block bg-primary text-white btn btn-primary">Comece já</span></a></li>
                   </ul>
                 </div>
@@ -85,96 +87,49 @@
       </div>
     </div>
 
-    <!--NAV BAR SITE --- F I M -->
-  
-    <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/eric-rothermel-FoKO4DpXamQ-unsplash.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-5 text-center" data-aos="fade">
-          <h1 class="text-uppercase">Calendario</h1>
-          <span class="caption d-block text-white">Datas Importantes<!--<a href="#">Colorlib</a>--></span>
-        </div>
-      </div>
-    </div>  
-
-    <div class="slant-1"></div>
-
-    
+    <!--NAV BAR SITE --- F I M -->  
     
     <div class="site-section first-section">
       <div class="container">
-        <div class="calendar disable-selection" id="calendar">
-          <div class="left-side">
-              <div class="current-day text-center">
-                  <h1 class="calendar-left-side-day"></h1>
-                  <div class="calendar-left-side-day-of-week"></div>
-              </div>
-              <div class="current-day-events">
-                  <div>Eventos de hoje:</div>
-                  <ul class="current-day-events-list">
-                      <li>Some Event</li>
-                  </ul>
-              </div>
-              <div class="add-event-day">
-                  <input type="text" class="add-event-day-field" placeholder="Adicionar um evento">
-                  <span class="fa fa-plus-circle cursor-pointer add-event-day-field-btn"></span>
-              </div>
-          </div>
-          <div class="right-side">
-              <div class="text-right calendar-change-year">
-                  <div class="calendar-change-year-slider">
-                      <span class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"></span>
-                      <span class="calendar-current-year">2020</span>
-                      <span class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"></span>
-                  </div>
-              </div>
-              <div class="calendar-month-list">
-                  <ul class="calendar-month">
-                      <li>jan</li>
-                  </ul>
-              </div>
-              <div class="calendar-week-list">
-                  <ul class="calendar-week">
-                      <li>Sun</li>
-                  </ul>
-              </div>
-              <div class="calendar-day-list">
-                  <ul class="calendar-days">
-                      <li data-day="01"></li>
-                      <li data-day="02"></li>
-                      <li data-day="03"></li>
-                      <li data-day="04"></li>
-                      <li data-day="05"></li>
-                      <li data-day="06"></li>
-                      <li data-day="07"></li>
-                      <li data-day="08"></li>
-                      <li data-day="09"></li>
-                      <li data-day="10"></li>
-                      <li data-day="11"></li>
-                      <li data-day="12"></li>
-                      <li data-day="13"></li>
-                      <li data-day="14"></li>
-                      <li data-day="15"></li>
-                      <li data-day="16"></li>
-                      <li data-day="17"></li>
-                      <li data-day="18"></li>
-                      <li data-day="19"></li>
-                      <li data-day="20"></li>
-                      <li data-day="21"></li>
-                      <li data-day="22"></li>
-                      <li data-day="23"></li>
-                      <li data-day="24"></li>
-                      <li data-day="25"></li>
-                      <li data-day="26"></li>
-                      <li data-day="27"></li>
-                      <li data-day="28"></li>
-                      <li data-day="29"></li>
-                      <li data-day="30"></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
+            <div class="resumos-menu">
+                <div id="divBusca">
+                    <input type="text" id="txtBusca" placeholder="Buscar..."/>
+                    <button id="btnBusca">Buscar</button>
+                </div>
+                <div class="resumoscomunidade"><a href="#" class="active">Resumos da comunidade</a></div>
+                <div class="resumosfavoritos"><a href="#">Resumos favoritos</a></div>
+                </ul>
+            </div>
+            <div class="resumos">
+                <div class="card-resumo">
+                    <img src="img/1.jpg">
+                    <p>Resumo sobre ditadura - Por Descomplica - <a href="#">Visualizar</a></p>
+                </div>
+                <div class="card-resumo">
+                    <img src="img/1.jpg">
+                    <p>Resumo sobre ditadura - Por Descomplica - <a href="#">Visualizar</a></p>
+                </div>
+                <div class="card-resumo">
+                    <img src="img/1.jpg">
+                    <p>Resumo sobre ditadura - Por Descomplica - <a href="#">Visualizar</a></p>
+                </div>
+                <div class="card-resumo">
+                    <img src="img/1.jpg">
+                    <p>Resumo sobre ditadura - Por Descomplica - <a href="#">Visualizar</a></p>
+                </div>
+                <div class="card-resumo">
+                    <img src="img/1.jpg">
+                    <p>Resumo sobre ditadura - Por Descomplica - <a href="#">Visualizar</a></p>
+                </div>
+                <div class="card-resumo">
+                    <img src="img/1.jpg">
+                    <p>Resumo sobre ditadura - Por Descomplica - <a href="#">Visualizar</a></p>
+                </div>
+            </div>
 
 
+            </div>
+            </div>
       </div>
     </div>
 
@@ -265,7 +220,7 @@
   <script src="js/aos.js"></script>
 
   <script src="js/main.js"></script>
-  <script type="text/javascript" src="js/cronograma.js"></script>
+  <script type="text/javascript" src="js/resumos.js"></script>
 
   
   </body>
