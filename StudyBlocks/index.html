@@ -26,17 +26,9 @@
     <script src="js/login.js"></script>
     <script>
       function initPage() {
-
-     
-
-    // Informa o nome do usuário logado
-    
-
     let divMenu = document.getElementById('menu-tela');
     let texto = '';
     if(usuarioCorrente.login){
-     
-      
       texto = texto + `
       <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
@@ -50,15 +42,11 @@
       <li><a href="#">Sobre nós</a></li>
       <li><a href="Cronograma.html">Cronograma</a></li>
       <li><a href="tarefas.html">Tarefas</a></li>
-      <li><a href="#">Resumos</a></li>
-      
-
+      <li><a href="resumos.html">Resumos</a></li>
       </ul>
-      
-      
+    
       `;
       divMenu.innerHTML  = texto;
-      
     }else if(!usuarioCorrente.login){
       
       texto = texto +`
@@ -79,13 +67,10 @@
     };
         // Associa a função de logout ao botão
      document.getElementById('btn_logout').addEventListener('click', logoutUser);
+     // Informa o nome do usuario
      document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
-
     };
-
       window.addEventListener('load', initPage);
-
-
     </script>
       
   
