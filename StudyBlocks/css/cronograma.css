@@ -89,8 +89,10 @@
       .calendar .add-event-day .add-event-day-field::placeholder {
         color: #ccc; }
       .calendar .add-event-day .add-event-day-field-btn {
-        left: inherit;
-        line-height: 34px; }
+        padding-left: 250px;
+        line-height: 34px;
+        
+    }
     .calendar .right-side {
       width: 520px;
       float: right; }
