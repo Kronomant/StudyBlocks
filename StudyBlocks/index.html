@@ -22,10 +22,80 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/login.js"></script>
+    <script>
+      function initPage() {
+
+     
+
+    // Informa o nome do usuário logado
+    
+
+    let divMenu = document.getElementById('menu-tela');
+    let texto = '';
+    if(usuarioCorrente.login){
+     
+      
+      texto = texto + `
+      <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+      <div id="mensagem" > 
+      <span  >Bem vindo <span id="nomeUsuario"></span></span>
+      <button id="btn_logout" class="btn btn-info"> Logout  </button>
+      
+      </div>
+      <ul  class="site-menu js-clone-nav d-none d-lg-block">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="#">Sobre nós</a></li>
+      <li><a href="Cronograma.html">Cronograma</a></li>
+      <li><a href="tarefas.html">Tarefas</a></li>
+      <li><a href="#">Resumos</a></li>
+      
+
+      </ul>
+      
+      
+      `;
+      divMenu.innerHTML  = texto;
+      
+    }else if(!usuarioCorrente.login){
+      
+      texto = texto +`
+      <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+                  <ul  class="site-menu js-clone-nav d-none d-lg-block">
+                  <li class="active"><a href="index.html">Home</a></li>
+                  <li><a href="#">Sobre nós</a></li>
+                
+                  <li><a href="login.html"><span class="d-inline-block bg-primary text-white btn btn-primary">Comece já</span></a></li>
+                  
+                  </ul>
+      `;
+
+      divMenu.innerHTML  = texto;
+      document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+
+    };
+        // Associa a função de logout ao botão
+     document.getElementById('btn_logout').addEventListener('click', logoutUser);
+     document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+
+    };
+
+      window.addEventListener('load', initPage);
+
+
+    </script>
+      
+  
     
   </head>
   <body>
-  
+    
+     
+    
+
   <div id="overlayer"></div>
   <div class="loader">
     <div class="spinner-border text-primary" role="status">
@@ -46,7 +116,9 @@
     </div> <!-- .site-mobile-menu -->
     
 
-    <!--NAV BAR SITE --- I N I C I O-->
+    <!--NAV BAR SITE  I N I C I O -->
+    
+    
     
     <div class="site-navbar-wrap js-site-navbar bg-white">
       
@@ -58,18 +130,21 @@
             </div>
             <div class="col-10">
               <nav class="site-navigation text-right" role="navigation">
-                <div class="container">
-                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+                <div id="menu-tela"class="container">
+                  <!--<div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
-                  <ul class="site-menu js-clone-nav d-none d-lg-block">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="#">Sobre nós</a></li>
-                    <li><a href="Cronograma.html">Cronograma</a></li>
-                    <li><a href="tarefas.html">Tarefas</a></li>
-                    <li><a href="resumos.html">Resumos</a></li>
-                    <li><a href="#"><span class="d-inline-block bg-primary text-white btn btn-primary">Comece já</span></a></li>
-                  </ul>
+                  <ul  class="site-menu js-clone-nav d-none d-lg-block">
+                  <li class="active"><a href="index.html">Home</a></li>
+                  <li><a href="#">Sobre nós</a></li>
+                  <li><a href="Cronograma.html">Cronograma</a></li>
+                  <li><a href="tarefas.html">Tarefas</a></li>
+                  <li><a href="#">Resumos</a></li>
+                  <li><a href="login.html"><span class="d-inline-block bg-primary text-white btn btn-primary">Comece já</span></a></li>
+                  
+                  </ul>-->
+                  
                 </div>
+                
               </nav>
             </div>
           </div>
@@ -160,7 +235,7 @@
         <div class="col-lg-5 ml-lg-auto py-5">
           <span class="caption d-block mb-2 font-secondary font-weight-bold">Você vai encontrar:</span>
           <h2 class="site-section-heading text-uppercase font-secondary mb-5">Dicas de organização</h2>
-          <p>É fato que na maioria da vida dos estudantes a organização não é um fator muito levado a serio. Alguns estudantes praticam esse habito, porém a maioria apenas leva a vida escolar de uma forma relaxada e não tem noção do quanto a organizção é um importante fator para o seu aprendizado.</p>
+          <p>É fato que na maioria da vida dos estudantes a orgnaizção não é um fator muito levado a serio. Alguns estudantes praticam esse habito, porém a maioria apenas leva a vida escolar de uma forma relaxada e não tem noção do quanto a organizção é um importante fator para o seu aprendizado.</p>
 
           <p>No Study Blocks além de entender a importancia de se organizar, você vai aprender diversas tecnicas e metódos para aumentar a sua produtividade e organização.</p>  
         </div>

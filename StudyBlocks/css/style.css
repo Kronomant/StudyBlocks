@@ -25,6 +25,19 @@ body {
 
 }*/
 
+
+#mensagem .btn{
+  background-color: #71bc42;
+  border-color: #71bc42;
+  margin-top: 10px;
+  border-radius: 10px 0px;
+}
+
+#mensagem span:hover{
+  color: #000;
+}
+
+
 ::-moz-selection {
   background: #000;
   color: #fff; }
