@@ -171,8 +171,10 @@ class CALENDAR {
         });
 
 
-        this.elements.eventAddBtn.addEventListener('click', e => {
-            let fieldValue = this.elements.eventField.value;
+        document.addEventListener("keyup", e => {
+            if(e.keyCode == 13)
+            {
+                let fieldValue = this.elements.eventField.value;
             if (!fieldValue) return false;
             let dateFormatted = this.getFormattedDate(new Date(this.date));
             if (!this.eventList[dateFormatted]) this.eventList[dateFormatted] = [];
@@ -180,6 +182,10 @@ class CALENDAR {
             localStorage.setItem(localStorageName, JSON.stringify(this.eventList));
             this.elements.eventField.value = '';
             this.drawAll()
+
+
+            }
+            
         });
 
 
