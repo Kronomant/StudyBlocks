@@ -4,6 +4,7 @@ body {
   color: rgba(0, 0, 0, 0.5);
   font-weight: 400;
   font-size: 1rem;
+  margin: 0;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background:  #98E690;
@@ -48,7 +49,9 @@ body {
 
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
-  color: #000; }
+  color: #000; 
+  margin: 0;
+}
 
 a {
   -webkit-transition: .3s all ease;
@@ -768,7 +771,7 @@ a {
       height: 7px;
       border-radius: 50%;
       border: none;
-      /*float: left;*/
+      float: left;
       background: #cccccc;
       -webkit-transition: .3s all ease;
       -o-transition: .3s all ease;
@@ -1649,3 +1652,11 @@ a {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
+.box-chat{
+  padding: 0 150px;
+}
+
+#footer{
+  padding: 0;
+  margin: 0;
+}

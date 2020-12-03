@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>StudyBlocks</title>
+    <title>StudyBlocks &mdash; Post</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -22,18 +21,20 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
-
+    
     <script src="mainJS/login.js"></script>
+    <script src="mainJS/singleResumo.js"></script>
     <script>
       function initPage() {
     let divMenu = document.getElementById('menu-tela');
     let texto = '';
     let teste = true;
 
+
     var retrivedbject = localStorage.getItem('user');
     var parsedbject = JSON.parse(retrivedbject);
 
-    
+    console.log(parsedbject.nome);
     if(parsedbject.nome){
       texto = texto + `
       <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
@@ -44,12 +45,13 @@
       
       </div>
       <ul  class="site-menu js-clone-nav d-none d-lg-block">
-      <li class="active"><a href="index.html">Home</a></li>
+      <li ><a href="index.html">Home</a></li>
       <li><a href="about.html">Sobre nós</a></li>
-      <li><a href="tarefas.html">Calendario + Tarefas</a></li>
+      <li><a href="tarefas.html">Cronograma + Tarefas</a></li>
       <li><a href="blog.html">Dicas</a></li>
-      <li><a href="resumos.html">Resumos</a></li>
+      <li class="active"><a href="resumos.html">Resumos</a></li>
       <li><a href="loja.html" class="font-weight-bold text-uppercase"> Nossa Loja </a></li>
+
       </ul>
     
       `;
@@ -62,8 +64,7 @@
                   <ul  class="site-menu js-clone-nav d-none d-lg-block">
                   <li class="active"><a href="index.html">Home</a></li>
                   <li><a href="about.html">Sobre nós</a></li>
-                  <li><a href="loja.html" class="font-weight-bold text-uppercase"> Nossa Loja </a></li>
-
+                
                   <li><a href="login.html"><span class="d-inline-block bg-primary text-white btn btn-primary">Comece já</span></a></li>
                   
                   </ul>
@@ -80,15 +81,12 @@
     };
       window.addEventListener('load', initPage);
     </script>
-      
-  
-    
   </head>
-  <body>
-    
-     
-    
 
+
+
+  <body onload="obtemDadosAJAX()">
+  
   <div id="overlayer"></div>
   <div class="loader">
     <div class="spinner-border text-primary" role="status">
@@ -98,6 +96,7 @@
 
   <div class="site-wrap">
 
+    
 
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
@@ -107,10 +106,6 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
-    
-
-    <!--NAV BAR SITE  I N I C I O -->
-    
     
     
     <div class="site-navbar-wrap js-site-navbar bg-white">
@@ -134,119 +129,65 @@
         </div>
       </div>
     </div>
-
-    <!--NAV BAR SITE --- F I M -->
-
-
-    <!--Carrousel Principal --- I N I C I O-->
   
-    <div class="slide-one-item home-slider owl-carousel">
-      
-      <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/home/green.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-md-6 text-center" data-aos="fade">
-              <h1 class="font-secondary  font-weight-bold text-uppercase">Bem vindo ao StudyBlocks</h1>
-            </div>
-          </div>
+    <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/Resumos.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="row align-items-center justify-content-center">
+        <div id="tituloResumo" class="col-md-12 text-center" data-aos="fade">
         </div>
-      </div>  
-
-      <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/home/christin-hume-Hcfwew744z4-unsplash.jpg)" data-aos="fade" data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="font-secondary font-weight-bold text-uppercase">Aumente sua produtividade</h1>
-            </div>
-          </div>
-        </div>
-      </div> 
-    </div>
-
-
-    <!--Carrousel Principal ---  F I M -->
+      </div>
+    </div>  
 
     <div class="slant-1"></div>
 
-    <div class="site-section first-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-12 text-center" data-aos="fade"> 
-            <span class="caption d-block mb-2 font-secondary font-weight-bold"> be focused
-            <h2 class="site-section-heading text-uppercase text-center font-secondary">Como usar a plataforma</h2>
-          </div>
-        </div>
-        <div class="row border-responsive">
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="">
-            <div class="text-center">
-              <span class=" display-4 d-block mb-3 text-primary"><img src="images/home/estude.png" width="100px"/>
-              </span>
-              <h3 class="text-uppercase h4 mb-3">Crie sua conta</h3>
-              <p>Facil e rapido, crie sua conta totalmente gratis de tenhas direito a todos os outro beneficios.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="100">
-            <div class="text-center">
-              <span class=" display-4 d-block mb-3 text-primary"><img src="images/home/calendario.png" width="100px"/></span>
-              <h3 class="text-uppercase h4 mb-3">Faça seu Calendario</h3>
-              <p>Defina datas de eventos e atividades de modo facil e intuitivo</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
-            <div class="text-center">
-              <span class="display-4 d-block mb-3 text-primary"><img src="images/home/lista.png" width="100px"/></span>
-              <h3 class="text-uppercase h4 mb-3">Defina prioridades</h3>
-              <p>Pelo metodo do kanban defina suas prioridade com um lista de tarefas.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <div class="text-center">
-              <span class=" display-4 d-block mb-3 text-primary"><img src="images/home/50878.jpg" width="100px"/></span>
-              <h3 class="text-uppercase h4 mb-3">Acesse a comunidade</h3>
-              <p>Além de poder publicar seus resumos e mapas mentais, você pode ver o dos outros na aba de Resumos.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     
-  <div class="site-half">
-    <div class="img-bg-1" style="background-image: url('images/home/sebastian-mantel-M1qSY_IuF4c-unsplash.jpg');" data-aos="fade"></div>
-    <div class="container">
-      <div class="row no-gutters align-items-stretch">
-        <div class="col-lg-5 ml-lg-auto py-5">
-          <span class="caption d-block mb-2 font-secondary font-weight-bold">Você vai encontrar:</span>
-          <h2 class="site-section-heading text-uppercase font-secondary mb-5">Dicas de organização</h2>
-          <p>É fato que na maioria da vida dos estudantes a orgnaizção não é um fator muito levado a serio. Alguns estudantes praticam esse habito, porém a maioria apenas leva a vida escolar de uma forma relaxada e não tem noção do quanto a organizção é um importante fator para o seu aprendizado.</p>
-
-          <p>No Study Blocks além de entender a importancia de se organizar, você vai aprender diversas tecnicas e metódos para aumentar a sua produtividade e organização.</p>  
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="site-half block">
-    <div class="img-bg-1 right" style="background-image: url('images/home/nick-morrison-FHnnjk1Yj7Y-unsplash.jpg');" data-aos="fade"></div>
-    <div class="container">
-      <div class="row no-gutters align-items-stretch">
-        <div class="col-lg-5 mr-lg-auto py-5">
-          <span class="caption d-block mb-2 font-secondary font-weight-bold">além de</span>
-          <h2 class="site-section-heading text-uppercase font-secondary mb-5">Métodos de Estudo</h2>
-          <p>Outro fator muito importante são os métodos de estudo, em geral o maximo que um estudante chega perto de aplicar um metodo é fazendo resumos, e esse  não é de longe o melhor metodo para aprender algo.</p>
-
-          <p>Aqui você tera acesso a diversos outro metodos, e podera escolher aquele que se adequa ao seu estilo de estudos.</p>  
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <div class="py-5 bg-primary">
+    
+  <div class="site-section first-section">
       <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-6 text-center mb-3 mb-md-0">
-            <h2 class="text-uppercase text-white mb-4" data-aos="fade-up">Seja muito mais produtivo</h2>
-            <a href="login.html" class="btn btn-bg-primary font-secondary text-uppercase" data-aos="fade-up" data-aos-delay="100">comece agora</a>
+        <div class="row">
+          <div class="col-md-12 blog-content" id ="conteudoResumo">
+            <p class="lead">Tecnica para aumentar sua produtividade</p>
+            <p style="font-size: large; color: black;">Origem</p>
+            <p>No ano de  1988 um italiano chamado Francesco Cirillo desenvolveu a tecnica pomodoro(tomate), a tecnica possui esse nome por referenciar  o cronometro gastronomico que possui a forma de um tomate. </p>
+            <p><img src="images/timer.jpg" alt="Image" class="img-fluid"></p>
+
+            <blockquote><p>Essa tecnica tinha o intuito de aumentar a produtividade, agiliziando as tarefas.</p></blockquote>
+
+            <p style="font-size: large; color: black;">Como utilizar</p>
+            <p>Existem inumeras variações dessa tecnica e a forma de aplica-la. Mas de forma geral são realizados os seguintes passos.</p>
+              <p>1. Planejar uma lista de tarefas, priorizando as tarefas do dia atual.</p>
+              <p>2. Ajustar algum cronometro com 25 ou 30 minutos.</p>
+              <p>3. Durante esses minutos a tarefa deve ser realizada com total concentração, evitando distrações e qualquer pausa, mesmo ir ao banheiro ou pegar agua, tente fazer essas ações antes de iniciar o cronometro.</p>
+              <p>4. ao fim da primeira sessão realizar uma pausa de 3 ou 5 minutos, nessas pausa você pode checar alguma mensagem ou escutar alguma musica, isso é de sua escolha, mas por experiencia propria utilizar o celular pode capturar muito a sua atenção, se você se distrai facilmente com redes sociais evite isso</p>
+              <p>5. Ao fim da tarefa ou quando for a 4 sessão de pomodoro, tire uma pausa maior (10-30 minutos) e zere as contagens.</p>
+             
+            
+            
+            <p><img src="images/ciclo-pomodoro.png" alt="Image" class="img-fluid"></p>
+
+            <p style="font-size: large; color: black;">Benefícios</p>
+            <u>
+              <li>Diminui a ansiedade</li>
+              <li>Aumenta o foco nas atividades</li>
+              <li>Aumentar a determinação para realizar tarefas complexas</li>
+              <li>Aumenta disciplina</li>
+              <li>Diminui a procrastinação</li>
+            </u>
+            <p style="font-size: large; color: black;">Opinião</p>
+            <p>Minha experiencia com a tecnica foi bem proveitosa em alguns aspectos, pessoalmente eu recomendo ela para realizar atividades ou trabalhos, para o estudo em si como ver uma  video aula ou ler  alguma materia eu não senti tantos beneficios. Nosso cerebro demora algum tempo para entrar em um estado de "flow" que seria uma concentração e alguma atividade, diversas vezes o tempo se esgotava e eu tinha que parar perdendo um pouco do meu foco. Mas reforçando essa foi a minha experiência cada pessoa se comporta de maneira diferente, talvez para você funcione com o estudo de materias.</p>
+
+
+            <div class="pt-5">
+              
+
+
+                
+              
+              <div class="comment-form-wrap pt-5">
+                
+              
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -269,7 +210,9 @@
                   <ul class="list-unstyled">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">Sobre nós</a></li>
-                    
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="Cronograma.html">Cronograma</a></li>
+                    <li><a href="tarefas.html">Tarefas</a></li>
                   </ul>
               </div>
               

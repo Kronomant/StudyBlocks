@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>StudyBlocks</title>
+    <title>StudyBlocks &mdash; Post</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -23,7 +22,13 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="stylesheet" href="css/criarResumo.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    
     <script src="mainJS/login.js"></script>
+    <script src="mainJS/cadastrarResumo.js"></script>
     <script>
       function initPage() {
     let divMenu = document.getElementById('menu-tela');
@@ -44,12 +49,11 @@
       
       </div>
       <ul  class="site-menu js-clone-nav d-none d-lg-block">
-      <li class="active"><a href="index.html">Home</a></li>
+      <li ><a href="index.html">Home</a></li>
       <li><a href="about.html">Sobre nós</a></li>
-      <li><a href="tarefas.html">Calendario + Tarefas</a></li>
+      <li><a href="tarefas.html">Cronograma + Tarefas</a></li>
       <li><a href="blog.html">Dicas</a></li>
-      <li><a href="resumos.html">Resumos</a></li>
-      <li><a href="loja.html" class="font-weight-bold text-uppercase"> Nossa Loja </a></li>
+      <li class="active"><a href="resumos.html">Resumos</a></li>
       </ul>
     
       `;
@@ -62,8 +66,7 @@
                   <ul  class="site-menu js-clone-nav d-none d-lg-block">
                   <li class="active"><a href="index.html">Home</a></li>
                   <li><a href="about.html">Sobre nós</a></li>
-                  <li><a href="loja.html" class="font-weight-bold text-uppercase"> Nossa Loja </a></li>
-
+                
                   <li><a href="login.html"><span class="d-inline-block bg-primary text-white btn btn-primary">Comece já</span></a></li>
                   
                   </ul>
@@ -80,15 +83,12 @@
     };
       window.addEventListener('load', initPage);
     </script>
-      
-  
-    
-  </head>
-  <body>
-    
-     
-    
 
+
+
+
+  <body>
+  
   <div id="overlayer"></div>
   <div class="loader">
     <div class="spinner-border text-primary" role="status">
@@ -97,8 +97,6 @@
   </div>
 
   <div class="site-wrap">
-
-
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -108,13 +106,7 @@
       <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
     
-
-    <!--NAV BAR SITE  I N I C I O -->
-    
-    
-    
     <div class="site-navbar-wrap js-site-navbar bg-white">
-      
       <div class="container">
         <div class="site-navbar bg-light">
           <div class="row align-items-center">
@@ -124,138 +116,87 @@
             <div class="col-10">
               <nav class="site-navigation text-right" role="navigation">
                 <div id="menu-tela"class="container">
-                  
-                  
                 </div>
-                
               </nav>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
 
-    <!--NAV BAR SITE --- F I M -->
+  </head>
+  <body>
 
-
-    <!--Carrousel Principal --- I N I C I O-->
-  
-    <div class="slide-one-item home-slider owl-carousel">
-      
-      <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/home/green.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-md-6 text-center" data-aos="fade">
-              <h1 class="font-secondary  font-weight-bold text-uppercase">Bem vindo ao StudyBlocks</h1>
-            </div>
-          </div>
+   <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/resumosWall.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-5 text-center" data-aos="fade">
+          <h1 class="text-uppercase">Resumos</h1>
+          <span class="caption d-block text-white">Crie seu proprio resumo e compartilhe</span>
         </div>
-      </div>  
-
-      <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/home/christin-hume-Hcfwew744z4-unsplash.jpg)" data-aos="fade" data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-md-7 text-center" data-aos="fade">
-              <h1 class="font-secondary font-weight-bold text-uppercase">Aumente sua produtividade</h1>
-            </div>
-          </div>
-        </div>
-      </div> 
-    </div>
-
-
-    <!--Carrousel Principal ---  F I M -->
+      </div>
+    </div>  
 
     <div class="slant-1"></div>
 
-    <div class="site-section first-section">
+    <div class="site-section first-section" data-aos="fade">
       <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-12 text-center" data-aos="fade"> 
-            <span class="caption d-block mb-2 font-secondary font-weight-bold"> be focused
-            <h2 class="site-section-heading text-uppercase text-center font-secondary">Como usar a plataforma</h2>
-          </div>
-        </div>
-        <div class="row border-responsive">
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="">
-            <div class="text-center">
-              <span class=" display-4 d-block mb-3 text-primary"><img src="images/home/estude.png" width="100px"/>
-              </span>
-              <h3 class="text-uppercase h4 mb-3">Crie sua conta</h3>
-              <p>Facil e rapido, crie sua conta totalmente gratis de tenhas direito a todos os outro beneficios.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="100">
-            <div class="text-center">
-              <span class=" display-4 d-block mb-3 text-primary"><img src="images/home/calendario.png" width="100px"/></span>
-              <h3 class="text-uppercase h4 mb-3">Faça seu Calendario</h3>
-              <p>Defina datas de eventos e atividades de modo facil e intuitivo</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
-            <div class="text-center">
-              <span class="display-4 d-block mb-3 text-primary"><img src="images/home/lista.png" width="100px"/></span>
-              <h3 class="text-uppercase h4 mb-3">Defina prioridades</h3>
-              <p>Pelo metodo do kanban defina suas prioridade com um lista de tarefas.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <div class="text-center">
-              <span class=" display-4 d-block mb-3 text-primary"><img src="images/home/50878.jpg" width="100px"/></span>
-              <h3 class="text-uppercase h4 mb-3">Acesse a comunidade</h3>
-              <p>Além de poder publicar seus resumos e mapas mentais, você pode ver o dos outros na aba de Resumos.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <div class="row">
+       
+          <div class="col-md-12 col-lg-12 mb-5">
 
-    
-  <div class="site-half">
-    <div class="img-bg-1" style="background-image: url('images/home/sebastian-mantel-M1qSY_IuF4c-unsplash.jpg');" data-aos="fade"></div>
-    <div class="container">
-      <div class="row no-gutters align-items-stretch">
-        <div class="col-lg-5 ml-lg-auto py-5">
-          <span class="caption d-block mb-2 font-secondary font-weight-bold">Você vai encontrar:</span>
-          <h2 class="site-section-heading text-uppercase font-secondary mb-5">Dicas de organização</h2>
-          <p>É fato que na maioria da vida dos estudantes a orgnaizção não é um fator muito levado a serio. Alguns estudantes praticam esse habito, porém a maioria apenas leva a vida escolar de uma forma relaxada e não tem noção do quanto a organizção é um importante fator para o seu aprendizado.</p>
-
-          <p>No Study Blocks além de entender a importancia de se organizar, você vai aprender diversas tecnicas e metódos para aumentar a sua produtividade e organização.</p>  
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="site-half block">
-    <div class="img-bg-1 right" style="background-image: url('images/home/nick-morrison-FHnnjk1Yj7Y-unsplash.jpg');" data-aos="fade"></div>
-    <div class="container">
-      <div class="row no-gutters align-items-stretch">
-        <div class="col-lg-5 mr-lg-auto py-5">
-          <span class="caption d-block mb-2 font-secondary font-weight-bold">além de</span>
-          <h2 class="site-section-heading text-uppercase font-secondary mb-5">Métodos de Estudo</h2>
-          <p>Outro fator muito importante são os métodos de estudo, em geral o maximo que um estudante chega perto de aplicar um metodo é fazendo resumos, e esse  não é de longe o melhor metodo para aprender algo.</p>
-
-          <p>Aqui você tera acesso a diversos outro metodos, e podera escolher aquele que se adequa ao seu estilo de estudos.</p>  
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <div class="py-5 bg-primary">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-6 text-center mb-3 mb-md-0">
-            <h2 class="text-uppercase text-white mb-4" data-aos="fade-up">Seja muito mais produtivo</h2>
-            <a href="login.html" class="btn btn-bg-primary font-secondary text-uppercase" data-aos="fade-up" data-aos-delay="100">comece agora</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer class="site-footer bg-dark">
-      <div class="container">
+    <div class="testbox">
+      <form>
         
 
+         <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="fullname">Titulo </label>
+                  <input type="text" id="nome_resumo" class="form-control" placeholder="titulo do resumo">
+                </div>
+              </div>
+
+        <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="phone">Area do conhecimento</label>
+                  <select id="area_conhecimento" class="form-control"> 
+                    <option value="">*Please select*</option>
+                    <option value="1">Ciências Exatas e Informática 1</option>
+                    <option value="2">Ciências Humanas e Política 2</option>
+                    <option value="3">Ciências Biológicas 3</option>
+                    <option value="4">Esporte e Saúde 4</option>
+                    <option value="5">Outros Assuntos 5</option>
+                  </select>
+                </div>
+              </div>
+
+        <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="font-weight-bold" for="message">Resumo</label> 
+                  <textarea name="message" id="resumo"  rows="20" class="form-control" placeholder="Digite seu resumo aqui"></textarea>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                
+                  <button type="button" class="btn btn-primary text-white px-4 py-2" onclick = "cadastrarResumo()">Send</button>
+                </div>
+              </div>
+      </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+  </body>
+
+
+
+
+    <!--FOOTER FOOTER FOOTER FOOTER FOOTER-->
+    <footer class="site-footer bg-dark">
+      <div class="container">
         <div class="row">
           <div class="col-md-4 mb-4 mb-md-0">
             <h3 class="footer-heading mb-4 text-white">Sobre nós</h3>
@@ -269,18 +210,15 @@
                   <ul class="list-unstyled">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">Sobre nós</a></li>
-                    
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="Cronograma.html">Cronograma</a></li>
+                    <li><a href="tarefas.html">Tarefas</a></li>
                   </ul>
               </div>
-              
             </div>
-
-            
           </div>
-
           
           <div class="col-md-2">
-            
             <div class="row">
             <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Nossas redes</h3></div>
               <div class="col-md-12">
@@ -289,7 +227,6 @@
                   <a href="#" class="p-2"><span class="icon-github"></span></a>
                   <a href="#" class="p-2"><span class="icon-instagram"></span></a>
                   <a href="#" class="p-2"><span class="icon-vimeo"></span></a>
-
                 </p>
               </div>
           </div>
@@ -302,10 +239,7 @@
             Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
-
-            
           </div>
-          
         </div>
       </div>
     </footer>

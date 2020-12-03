@@ -20,13 +20,21 @@
     <link rel="stylesheet" href="css/animate.css">    
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/cronograma.css">
   
-    <script src="js/login.js"></script>
+    <script src="mainJS/login.js"></script>
     <script>
       function initPage() {
     let divMenu = document.getElementById('menu-tela');
     let texto = '';
-    if(usuarioCorrente.login){
+    let teste = true;
+
+    var retrivedbject = localStorage.getItem('user');
+    var parsedbject = JSON.parse(retrivedbject);
+
+    console.log(parsedbject.nome);
+    if(parsedbject.nome){
       texto = texto + `
       <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
@@ -38,22 +46,21 @@
       <ul  class="site-menu js-clone-nav d-none d-lg-block">
       <li ><a href="index.html">Home</a></li>
       <li><a href="about.html">Sobre nós</a></li>
-      <li><a href="Cronograma.html">Cronograma</a></li>
-      <li class="active"><a href="tarefas.html">Tarefas</a></li>
-      <li ><a href="blog.html">Dicas</a></li>
+      <li class="active"><a href="tarefas.html">Calendario + Tarefas</a></li>
+      <li><a href="blog.html">Dicas</a></li>
       <li><a href="resumos.html">Resumos</a></li>
       </ul>
     
       `;
       divMenu.innerHTML  = texto;
-    }else if(!usuarioCorrente.login){
+    }else if(!parsedbject.nome){
       
       texto = texto +`
       <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
                   <ul  class="site-menu js-clone-nav d-none d-lg-block">
                   <li class="active"><a href="index.html">Home</a></li>
-                  <li><a href="#">Sobre nós</a></li>
+                  <li><a href="about.html">Sobre nós</a></li>
                 
                   <li><a href="login.html"><span class="d-inline-block bg-primary text-white btn btn-primary">Comece já</span></a></li>
                   
@@ -61,13 +68,13 @@
       `;
 
       divMenu.innerHTML  = texto;
-      document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+      document.getElementById('nomeUsuario').innerHTML = parsedbject.nome;
 
     };
         // Associa a função de logout ao botão
      document.getElementById('btn_logout').addEventListener('click', logoutUser);
      // Informa o nome do usuario
-     document.getElementById('nomeUsuario').innerHTML = usuarioCorrente.nome;
+     document.getElementById('nomeUsuario').innerHTML = parsedbject.nome;
     };
       window.addEventListener('load', initPage);
     </script>
@@ -75,7 +82,7 @@
   
   
   </head>
-  <body>
+  <body onload="obtemDadosAJAX()">
   
   <div id="overlayer"></div>
   <div class="loader">
@@ -138,7 +145,81 @@
    <!-- CONTEUDO DO SITE     I N I C I O -->
 
    <main class="site-section first-section">
-        <div class="container">
+    
+<div class="container">
+        <div class="calendar disable-selection" id="calendar">
+          <div class="left-side">
+              <div class="current-day text-center">
+                  <h1 class="calendar-left-side-day"></h1>
+                  <div class="calendar-left-side-day-of-week"></div>
+              </div>
+              <div class="current-day-events">
+                  <div>Eventos de hoje:</div>
+                  <ul class="current-day-events-list">
+                      <li>Some Event</li>
+                  </ul>
+              </div>
+              <div class="add-event-day">
+                  <input type="text" class="add-event-day-field" placeholder="Adicionar um evento">
+                  <span class="fa fa-plus-circle cursor-pointer add-event-day-field-btn"></span>
+              </div>
+          </div>
+          <div class="right-side">
+              <div class="text-right calendar-change-year">
+                  <div class="calendar-change-year-slider">
+                      <span class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"></span>
+                      <span class="calendar-current-year">2020</span>
+                      <span class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"></span>
+                  </div>
+              </div>
+              <div class="calendar-month-list">
+                  <ul class="calendar-month">
+                      <li>jan</li>
+                  </ul>
+              </div>
+              <div class="calendar-week-list">
+                  <ul class="calendar-week">
+                      <li>Sun</li>
+                  </ul>
+              </div>
+              <div class="calendar-day-list">
+                  <ul class="calendar-days">
+                      <li data-day="01"></li>
+                      <li data-day="02"></li>
+                      <li data-day="03"></li>
+                      <li data-day="04"></li>
+                      <li data-day="05"></li>
+                      <li data-day="06"></li>
+                      <li data-day="07"></li>
+                      <li data-day="08"></li>
+                      <li data-day="09"></li>
+                      <li data-day="10"></li>
+                      <li data-day="11"></li>
+                      <li data-day="12"></li>
+                      <li data-day="13"></li>
+                      <li data-day="14"></li>
+                      <li data-day="15"></li>
+                      <li data-day="16"></li>
+                      <li data-day="17"></li>
+                      <li data-day="18"></li>
+                      <li data-day="19"></li>
+                      <li data-day="20"></li>
+                      <li data-day="21"></li>
+                      <li data-day="22"></li>
+                      <li data-day="23"></li>
+                      <li data-day="24"></li>
+                      <li data-day="25"></li>
+                      <li data-day="26"></li>
+                      <li data-day="27"></li>
+                      <li data-day="28"></li>
+                      <li data-day="29"></li>
+                      <li data-day="30"></li>
+                  </ul>
+              </div>
+          </div>
+</div>
+
+    <div class="container">
           <div class="row mb-5">
             <div class="col-md-12 text-center" data-aos="fade"> 
               <span class="caption d-block mb-2 font-secondary font-weight-bold"> be focused
@@ -149,62 +230,23 @@
           </div>
           </div>
       
-          <div class="row" data-aos="fade">
+    <div class="row" data-aos="fade">
               <!--Conteudo da Lista de Tarefas INICIO-->
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3 contentMain" > 
-            
+        <div class="col-12  contentMain" > 
           <div class="A_fazer">
               <h5>A fazer</h5>
           </div>
-
           <div id="list" > 
-              
           </div>
-          
           <div class="add-to-do" >
               <i class="fa fa-plus-circle"></i>
               <input type="text" id="input" placeholder="adicionar a lista">
-
           </div>
-
-
-
+      </div>
       <!--Conteudo da Lista de Tarefas FIM-->
-      </div>
-
-      <div class="col-3 col-sm-12 col-md-4 col-lg-3 content">
 
 
-
-          <div id="list2" >
-              
-              <div class="progresso">
-                  <h5>Em progresso</h5>
-              </div>
-              
-              <div class="dropper" ondragover="overAction(event)" ondrop="dropAction(event)">
-
-              </div>
-
-          </div>
-
-      </div>
-
-      <div class="col-3 col-sm-12 col-md-4 col-lg-3 content">
-
-          <div class="Completo">
-              <h5>Completo</h5>
-          </div>
-
-          <div id="list3"  ondragover="overAction(event)" ondrop="dropAction(event)">
-              
-              <div class="dropper" ondragover="overAction(event)" ondrop="dropAction(event)">
-
-              </div>
-
-
-          </div>
-      </div>
+     
           </div>
         
 
@@ -303,7 +345,8 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="js/scripts_tarefas.js"></script>
+    <script src="mainJS/scripts_tarefas.js"></script>
+    <script type="text/javascript" src="mainJS/cronograma.js"></script>
 
   
   </body>
